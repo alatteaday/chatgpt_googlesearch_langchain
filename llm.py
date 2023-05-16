@@ -1,25 +1,15 @@
-import os
-import json
-# from langchain import PromptTemplate, LLMChain
 from langchain.prompts.chat import (
     ChatPromptTemplate,
     SystemMessagePromptTemplate,
     AIMessagePromptTemplate,
     HumanMessagePromptTemplate,
 )
-# from langchain.schema import (
-#     AIMessage,
-#     HumanMessage,
-#     SystemMessage
-# )
-# from langchain.memory import ConversationBufferWindowMemory
 from langchain.chat_models import ChatOpenAI
-# from langchain.chains import ConversationChain
-# from langchain.tools import Tool
-# from langchain.utilities import GoogleSearchAPIWrapper
-# from langchain.agents import initialize_agent
-# from langchain.agents import AgentType
 from langchain.agents.conversational_chat.prompt import PREFIX
+
+import os
+import json
+
 
 # Personal KEYs
 file_path = "keys.json"
@@ -45,5 +35,5 @@ chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_mes
 llm = ChatOpenAI(temperature=0)
 
 # Get a chat completion from the formatted messages
-r = llm(chat_prompt.format_prompt(mbti=input('MBTI: '), gender=input('Gender: '), text=input('Instruction: ')).to_messages())
-print(r)
+res = llm(chat_prompt.format_prompt(mbti=input('MBTI: '), gender=input('Gender: '), text=input('Instruction: ')).to_messages())
+print(res)
