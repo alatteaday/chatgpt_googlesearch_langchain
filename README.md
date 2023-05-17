@@ -1,5 +1,5 @@
 # ChatGPT API + LangChain + Google Search API
-ChatGPT API having a MBTI type and its gender with Google Search tool implemented through LangChain
+Conversational LM having MBTI with ChatGPT API and Google Search API through LangChain
 
 ## Environment
 Install the required libraries with requirements.txt file like below.
